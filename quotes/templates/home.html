@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+{% if ticker %}
+	{{ ticker }}
+{% endif %}
+
+{% if api %}
+	{% if api == "Error..." %}
+		There was a problem with your ticker 
+		symbol...please try again.
+	{% else%}
+
+			</h1>{{ api.api }}</h1><br><br>
+			Company Name: {{ api.companyName }}<br><br>
+			Primary Exchange {{ api.primaryExchange }}<br><br>
+			Open Time: {{ api.openTime }}<br><br>
+			Open: ${{ api.open }}<br><br>
+			High: ${{ api.high }}<br><br>
+			Low: ${{ api.low }}<br><br>
+			Close: ${{ api.close }}<br><br>
+
+
+
+			Previous Open: ${{ api.previousOpen }}<br><br>
+			Prev Close: ${{ api.previousClose }}<br><br>
+			Previus High: ${{ api.previousHigh }}<br><br>
+			Previous Close: ${{ api.previousClose }}<br><br>
+	
+
+	
+
+	
+	{% endif %}
+{% endif%}
+
+{% endblock %}
